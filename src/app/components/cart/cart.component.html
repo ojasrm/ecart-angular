@@ -1,0 +1,60 @@
+<div class="container">
+  <ng-container *ngIf="products.length != 0">
+    <div class="card-table">
+      <div class="card-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Sr.no.</th>
+              <th>Product name</th>
+              <th>Product image</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products, let i = index">
+              <td>{{i+1}}</td>
+              <td>{{item.title}}</td>
+              <td><img src="{{item.image}}" style="width:100px;" alt=""></td>
+              <td style="width: 30%;">{{item.description}}</td>
+              <td style="width: 15%;">{{item.price}}</td>
+              <td style="width: 15%;">{{item.quantity}}</td>
+              <td style="width: 15%;">{{item.total}}</td>
+              <td>
+                <button class="btn btn-danger" (click)="removeProduct(item)"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td><button (click)="removeAllProducts()" class="btn btn-danger">Empty cart</button></td>
+              <td><button routerLink="/products" class="btn btn-warning">Shop more</button></td>
+              <td><button class="btn btn-success">Check out</button></td>
+              <td><strong>Total: INR {{allProducts}}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="products.length == 0">
+    <div class="container">
+      <div class="card">
+        <h4 class="cart-title">My Cart</h4>
+      </div>
+      <div class="center">
+        <img
+          src="https://pixabay.com/get/g46ccadd80ec3547c853df5692fabdefc5b6d5e98d75f1297196e691ae60c4ee313d5ddbc3386e97e0c9560759dc69deed680c5fba0a2a545905f4b8d0f5bbe04827e61b3a47bb0780c3d1ac7299f8702_640.png"
+          alt="" height="100px">
+        <h5>Your cart is empty</h5>
+        <h6>Add items</h6>
+        <button routerLink='/products' class="btn btn-primary">Shop Now</button>
+      </div>
+    </div>
+  </ng-container>
+
+</div>

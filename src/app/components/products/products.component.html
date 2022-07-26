@@ -1,0 +1,51 @@
+<div class="container-fluid cart-top">
+  <div class="container d-flex">
+    <div class="items">
+      <a>
+        <img
+          src="https://pixabay.com/get/ga82be11f7d32ab07c8b312ac6290f9363eba63c10ed6889fa1d30a8ef6629a7192e1fd084e028e2b66f1345b20b0ff4f155d98657f5424464d188a4d015363bf734d45aa9015ba71170d5726c1e78194_640.png"
+          alt="" width="100px" height="100px">
+      </a>
+      <h6>All products</h6>
+    </div>
+    <div class="items">
+      <a>
+        <img
+          src="https://pixabay.com/get/gfb08e24633f6995695e218503e1b52d1ffe7f28788c2cb97f3049fa20f65c7c24bfe81dc617d64cda2fdae4a33531ed46829886b9e19ed3d6bbadeb8e9d43c376ef694abdf7dac047a1b465d05594566_640.jpg"
+          alt="" width="100px" height="100px">
+      </a>
+      <h6>Electronics</h6>
+    </div>
+    <div class="items">
+      <a>
+        <img
+          src="https://pixabay.com/get/g719da3fd3012a77416a727d053ef7698a40e4b8ff6a5c4cd4b703eb4e0b2402e0ccdb8758555e160a421066d00f5994f66405db3babd466a2bec6ad86d649dff07eccf7b1b248ca116025057219d5df6_640.jpg"
+          alt="" width="100px" height="100px">
+      </a>
+      <h6>Fashion</h6>
+    </div>
+    <div class="items">
+      <a>
+        <img
+          src="https://pixabay.com/get/g7d866df20285e60fae7688b3af22d4f528d2e6cf7a0dc75922b8d959afb819e2f6d7070e431021fb922e30bb5775b87fa6120f60f741cb3655ae004b1ef2c77f2406d61d5189a5605772fcda2be7b709_640.jpg"
+          alt="" width="100px" height="100px">
+      </a>
+      <h6>Jewellery</h6>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of productList">
+      <div class="card col-md-3">
+        <img src="{{item.image}}" alt="">
+        <h5 class="itemdata">{{item.title}}</h5>
+        <p class="itemdata">{{item.description}}</p>
+        <p><strong>Price:</strong> {{item.price}}</p>
+        <p>{{item.category}}</p>
+        <button class="btn btn-primary" (click)="addToCart(item)">Add to cart</button>
+      </div>
+    </ng-container>
+  </div>
+</div>
